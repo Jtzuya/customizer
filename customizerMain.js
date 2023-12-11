@@ -125,14 +125,12 @@ async function submitRequestAQuote(e) {
         dataToServer[key] = value
     }
 
-    // const content = await res.json()
-    // console.log("response from API", content)
     Email.send({
         SecureToken : "accbd6c4-fc43-4951-926e-4844b01c06e4",
-        To : dataToServer["client_email"],
+        To : dataToServer["email"],
         From : 'jtzuya@gmail.com',
         Subject : "Product Customize",
-        Body : `Give me a quote on this custom image <br> <img src=\"${output}\" /> <br> and send it to ${document.getElementById('client_email').value}`
+        Body : `Give me a quote on this custom image <br> <img src=\"${output}\" /> <br> and send it to ${dataToServer["email"]}`
     }).then(message => alert(message));
 }
 

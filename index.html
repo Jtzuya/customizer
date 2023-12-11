@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./customizerFrames.js" defer></script>
 </head>
 <body>
@@ -281,12 +282,12 @@
                         <form method="post">
                         <!-- <form> -->
                             <div class="customizer__field-names">
-                                <input type="text" name="first_name" id="first_name" value="jake" placeholder="First name" class="customizer__field" required>
-                                <input type="text" name="last_name" id="last_name" value="lue" placeholder="Last name (optional)" class="customizer__field">
+                                <input type="text" name="first_name" id="first_name" value="john" placeholder="First name" class="customizer__field" required>
+                                <input type="text" name="last_name" id="last_name" value="doe" placeholder="Last name (optional)" class="customizer__field">
                             </div>
 
                             <input type="text" name="image_url" id="image_url" hidden>
-                            <input type="email" name="email" id="client_email" placeholder="Email address" value="test@gmail.com" class="customizer__field">
+                            <input type="email" name="email" id="client_email" placeholder="Email address" class="customizer__field">
                             <input type="submit" id="email_submit" hidden>
 
                             
@@ -342,6 +343,6 @@
         </div>
     </div>
 
-    <script src="./customizerMain.js" defer></script>
+    <script src="./customizerMain.js" defer type="module"></script>
 </body>
 </html>
