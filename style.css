@@ -57,6 +57,7 @@
   column-gap: .25rem;
   row-gap: .25rem;
   gap: .25rem;
+  row-gap: 3rem;
   padding: 0;
 }
 
@@ -71,14 +72,42 @@
   border: 2px solid black;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.15);
   transition: scale 100ms ease-in-out;
+  position: relative;
 }
 
 .customizer__color:hover {
   scale: 1.1;
 }
 
+.customizer__color::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  z-index: 10;
+  /* background-color: yellow; */
+}
+
+.customizer__color-name {
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
 .customizer__case {
+  position: relative;
   margin-bottom: var(--size);
+}
+
+.customizer__case:not(:first-of-type) {
+  padding: 0 0 calc(var(--size) * 1.5);
 }
 
 .customizer__field-label {
@@ -88,10 +117,6 @@
 
 .customizer__field-label i {
   font-weight: normal;
-}
-
-.customizer__case {
-  position: relative;
 }
 
 .customizer__case .menu__case svg {
@@ -119,13 +144,23 @@ left: 0;
 background: orange;
 }
 
-.menu > .menu-content,
-.menu__item.menu__item--extended > .menu__extension {
-  display: none;
-  height: 0;
-  opacity: 0;
-  pointer-events: hidden;
+.menu__extension-wrapper {
   width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 300ms ease;
+}
+
+.menu__extension {
+  overflow: hidden;
+}
+
+[name="variants_expand"]:checked ~ .menu__extension-wrapper {
+  grid-template-rows: 1fr;
+}
+
+[name="variants_expand"]:checked ~ .menu__item .menu__icon.menu__icon.menu__icon--toggle::after {
+  opacity: 0;
 }
 
 .menu:focus-within > .menu-content,
@@ -144,7 +179,7 @@ background: orange;
   font-family: var(--font); 
   color: var(--menu-clr); 
   border: 2px solid black;
-  min-width: 320px;
+  min-width: 170px;
   max-width: 320px;
   border-radius: 8px;
 }
@@ -589,4 +624,41 @@ background: orange;
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+.customizer__img {
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+
+#ActivityDIV {
+  position: sticky;
+  height: 100%;
+  width: 100%;
+  /* top: 50%;
+  left: 50%; */
+  top: 0;
+  /* transform: translate(-50%, -50%); */
+}
+
+#ActivityDIV svg {
+  max-width: 400px;
+  /* scale: .45; */
+}
+
+@media (max-width: 767px) {
+  .customizer {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "content" "frame";
+  }
+
+  .customizer__content-wrapper {
+    grid-area: content;
+  }
+}
+
+.label-color,
+.label-variant {
+  font-size: 14px;
 }
