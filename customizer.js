@@ -128,7 +128,9 @@
     }
 
     function generateImage() {
-        const svg = document.getElementById('ActivityDIV').firstElementChild
+        const svg = document.getElementById('ActivityDIV').lastElementChild
+        // console.log(svg)
+
         const svgData =  new XMLSerializer().serializeToString(svg)
         const svgDataBase64 = btoa(unescape(encodeURIComponent(svgData)))
         const svgDataUrl = `data:image/svg+xml;charset=utf-8;base64,${svgDataBase64}`
@@ -180,6 +182,7 @@
         downloadBtn.download = 'customized-output.png';
         // the string representation of the object URL will be small enough to workaround the browser's limitations
         downloadBtn.href = URL.createObjectURL(blob);
+        // console.log('link:', downloadBtn)
         // you must revoke the object URL, 
         //   but since we can't know when the download occured, we have to attach it on the click handler..
 
