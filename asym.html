@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script> -->
+    <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=11"></script> -->
+    <!-- <script src="./customizer.js" defer></script> -->
+
+</head>
+<body>
+    <input type="checkbox" name="confirmation_modal" id="confirmation_modal" hidden>
+    <label for="confirmation_modal" class="customizer__confirmation-modal">&nbsp;</label>
+
+    <div class="customizer">
+        <!-- images -->
+        <div class="customizer__img">
+            <div class='held' id='ActivityDIV'>
+                <!-- image will be added here via Javascript -->
+            </div>
+        </div>
+
+        <!-- content and form -->
+        <div class="customizer__content-wrapper">
+            <h2 class="customizer__heading">Your brand – your colors</h2>
+            <div class="customizer__steps">
+                <p>Choose the colors of your asymmetrical or symmetrical spinnaker!</p>
+                <ol>
+                    <li>Select the size you think you will need. Don’t worry, we will review this with you.</li>
+                    <li>Click on a color first, then click on the panel where you want to apply it. When done, please make a screen shot or pdf and email us at: <span class="customizer__contact">contact@ispinnakers.com</span></li>
+                    <li>
+                        Get inspiration from customer projects 
+                        <a href="https://ispinnakers.com/beneteau-jeanneau-hunter-catalina-spinnaker-pictures/">here</a>
+                    </li>
+                    <li>Curious about what happens next?</li>
+                </ol>
+            </div>
+
+            <div class="customizer__form">
+                <div class="customizer__case">
+                    <p class="customizer__field-label">Select Asym: <i class="label-variant"></i></p>
+                    <div class="menu__case">
+                        <ul class="menu__item menu__item--extended">
+                            <input type="checkbox" name="variants_expand" id="variants_expand" hidden>
+
+                            <label for="variants_expand" class="menu__item">
+                                <span class="menu__item-wrapper">View Variants</span>
+                                <span class="menu__icon menu__icon--toggle"></span>
+                            </label>
+    
+                            <div class="menu__extension-wrapper">
+                                <ul class="menu__extension">
+                                    <!-- <customizer-frames 
+                                        variants="Small Asym - Size 00 to 6 || Medium Asym - Size 7 to 11 || Large Asym - Size 12+ || Small Symm - Size 1 to 4 || Medium Symm - Size 5 to 10 || Large Symm - Size 11+"
+                                    ></customizer-frames> -->
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="customizer__case">
+                    <p class="customizer__field-label">Select a color: <i class="label-color"></i></p>
+                    <ul class="customizer__colors">
+                        <!-- <span class="customizer__color"></span> -->
+                    </ul>
+                </div>
+
+                <div class='held'>
+                    <div class="customizer__field-wrapper">
+                        <span id="btnClear"       class="customizer__button customizer__button--default">Clear Color</span>
+
+                        <!-- prepares the image to finalization -->
+                        <span class="customizer__button" id="prepImage">Download</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./customizer.js" defer></script>
+</body>
+</html>
